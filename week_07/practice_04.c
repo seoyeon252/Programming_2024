@@ -33,7 +33,7 @@ int main(int argc, char *argv[]) {
 	int y;
 	x=get_integer();
 	y=get_integer();
-	printf("The result of C(%i %i) is %i", x, y, combination(x, y));
+	printf("The result of C(%i , %i) is %i.", x, y, combination(x, y));
 	
 	return 0;
 }
