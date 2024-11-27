@@ -6,8 +6,7 @@
 int main(int argc, char *argv[]) {
 	int i;
 	int grade[5];
-	int (*ptr)[5];
-	ptr=grade;
+	int (*ptr)[5]=grade;
 	
 	int j;
 	
@@ -16,7 +15,6 @@ int main(int argc, char *argv[]) {
 	  scanf("%d", &grade[i]);
 	}
 	
-
 	for(j=0;j<5;j++){
 	  printf("grade[%i]=%i\n",j, (*ptr)[j]);
 	
