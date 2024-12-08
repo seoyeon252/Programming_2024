@@ -123,12 +123,31 @@ void checkDie(void)
 // ----- EX. 6 : game end ------------
 int getAlivePlayer(void)
 {
-   
+ int i;
+ int cnt = 0;
+ for (i=0;i<N_PLAYER;i++)
+ {
+ 	if(player_status[i] == PLAYERSTATUS_END)
+ 	cnt++;
+   }  
+   return cnt;
 }
 
 int getWinner(void)
 {
-    
+	int i;
+	int winner = 0;
+	int max_coin = -1;
+ 
+	for (i=0;i<N_PLAYER;i++)
+	{
+		if(player_coin[i] > max_coin)
+		{
+			max_coin = player_coin[i];
+	
+		}
+	}
+	return winner;
 }
 // ----- EX. 6 : game end ------------
 
@@ -229,7 +248,19 @@ int main(int argc, const char * argv[]) {
     printf("GAME END!!\n");
     printf("%i players are alive! winner is %s\n", getAlivePlayer(), player_name[getWinner()]);
 // ----- EX. 6 : game end ------------
-    
+    int game_end(void){
+    	int i;
+    	int flag_end = 1;
+    	for(i=0;i<N_PLAYER;i++)
+    	{
+    		if(player_status[i] == PLAYERSTATUS_LIVE)
+    		{
+    			flag_end = 0;
+    			break;
+			}
+		}
+		return flag_end;
+	}
 // ----- EX. 2 : structuring ------------
 
     return 0;
