@@ -87,7 +87,6 @@ int roll(void) {
     return rand() % MAX_SHARKSTEP + 1;  // 1부터 MAX_SHARKSTEP까지의 숫자 반환
 }
 
-// 상어 이동 함수
 
     // 1부터 MAX_SHARKSTEP까지의 랜덤 이동
     int step = roll();  // 상어의 이동 칸 수

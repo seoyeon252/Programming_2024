@@ -144,7 +144,7 @@ int getWinner(void)
 		if(player_coin[i] > max_coin)
 		{
 			max_coin = player_coin[i];
-	
+			winner = i;
 		}
 	}
 	return winner;
@@ -190,7 +190,7 @@ int main(int argc, const char * argv[]) {
         if (player_status[turn] != PLAYERSTATUS_LIVE)
         {
             turn = (turn + 1) % N_PLAYER;
-            continue;
+    		continue;
         }
 // ----- EX. 4 : player ------------
         
